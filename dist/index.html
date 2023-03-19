@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Pursuit of PI</title>
+  <title>Pursuit of PI</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
 
@@ -43,7 +43,48 @@
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tone/0.12.0/Tone.min.js'></script>
-<script src='https://codepen.io/jak_e/pen/rYWNqd/d9901ff910bd5f4a8b91e629b5d99d28.js'></script><script  src="./script.js"></script>
+<script>class Fullscreen {
+  constructor() {
+    this._detectSupport();
+  }
+
+  toggle(element = document.documentElement) {
+    if (!this.supported) return;
+    if (this.isFull)
+    this._exit();else
+
+    this._enter(element);
+  }
+
+  _detectSupport() {
+    this.supported = false;
+    let element = document.documentElement;
+    if (element.requestFullscreen)
+    this.enterMethod = 'requestFullscreen';else
+    if (element.mozRequestFullScreen)
+    this.enterMethod = 'mozRequestFullScreen';else
+    if (element.webkitRequestFullscreen)
+    this.enterMethod = 'webkitRequestFullscreen';else
+    if (element.msRequestFullscreen)
+    this.enterMethod = 'msRequestFullscreen';
+    if (this.enterMethod)
+    this.supported = true;
+  }
+
+  _enter(element) {
+    this.isFull = true;
+    element[this.enterMethod]();
+  }
+
+  _exit() {
+    this.isFull = false;
+    if (document.exitFullscreen)
+    document.exitFullscreen();else
+    if (document.mozCancelFullScreen)
+    document.mozCancelFullScreen();else
+    if (document.webkitExitFullscreen)
+    document.webkitExitFullscreen();
+  }}</script><script  src="./script.js"></script>
 
 </body>
 </html>
