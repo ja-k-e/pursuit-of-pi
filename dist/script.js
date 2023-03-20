@@ -1092,6 +1092,7 @@ class Token {
 
 newGame();
 
+/*
 let focused = false;
 setInterval(checkPageFocus, 200);
 function checkPageFocus() {
@@ -1104,6 +1105,7 @@ function checkPageFocus() {
     focused = false;
   }
 }
+*/
 
 let fullscreen = new Fullscreen();
 let $fullscreen = document.querySelector('.fullscreen');
