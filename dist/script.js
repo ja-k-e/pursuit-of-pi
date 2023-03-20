@@ -3,6 +3,10 @@ console.clear();
 const FF = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const PI = Math.PI,PI2 = PI * 2;
 
+document.body.addEventListener('click', () => {
+  document.body.classList.add('focused');
+});
+
 document.documentElement.addEventListener('mousedown', () => {
   if (Tone.context.state !== 'running') Tone.context.resume();
 });
